@@ -1,0 +1,14 @@
+---
+- name: Test Ansible Vault Decryption
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - secrets.yml
+  tasks:
+    - name: Show decrypted database password
+      debug:
+        msg: "Decrypted DB Password: {{ db_password }}"
+
+    - name: Show decrypted API token
+      debug:
+        msg: "Decrypted API Token: {{ api_token }}"
