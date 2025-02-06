@@ -29,5 +29,6 @@ RUN zypper -v -n in \
     python3-libvirt-python \
     python3-lxml \
     python3-netaddr \
+    vim \
     ; \
     zypper clean --all
