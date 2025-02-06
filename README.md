@@ -8,7 +8,7 @@ This repository provides a simple **Ansible Runner** setup that runs a playbook 
 - A new container is created for each playbook run.
 - Execution logs and artifacts are stored on the VM, not inside the container.
 - Based on [ansible-container](https://github.com/SUSE/ansible-container/)
-- OpenSUSE Tumbleweed.
+- Image used OpenSUSE Tumbleweed, Tested on SLE15-SP5
 
 ## Ansible runner commands
 
