@@ -1,0 +1,8 @@
+- name: Test Ansible Runner
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Echo a message
+      debug:
+        msg: "Ansible Runner is working!"
+

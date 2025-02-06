@@ -1,0 +1,24 @@
+#!/bin/bash
+delete_file() {
+FILE=$1
+if [[ -e "/host/bin/${FILE}" || -L "/host/bin/${FILE}" ]]; then
+    /usr/bin/rm -vf /host/bin/${FILE}
+elif [[ -e "/host/usr/local/bin/${FILE}" || -L "/host/usr/local/bin/${FILE}" ]]; then
+    /usr/bin/rm -vf /host/usr/local/bin/${FILE}
+else
+    echo "${FILE} not present, nothing to remove"
+fi
+}
+
+COMMANDS="ansible-wrapper.sh \
+ansible-runner"
+
+for COMMAND in ${COMMANDS}; do
+    delete_file ${COMMAND}
+done
+
+if [ -d /host/usr/local/share/ansible-runner ]; then
+    rm -rf /host/usr/local/share/ansible-runner
+fi
+
+exit 0

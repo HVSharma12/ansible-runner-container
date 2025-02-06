@@ -1,0 +1,55 @@
+#!/bin/bash
+create_command_bin() {
+SCRIPT=$1
+if [ ! -e ${TARGET_BIN}/${SCRIPT} ]; then
+        cd ${TARGET_BIN}; ln -s ansible-wrapper.sh ${SCRIPT}
+else
+        echo "${TARGET_BIN}/${SCRIPT} already exist, will not update it"
+fi
+}
+
+if [ ! -e ${TARGET_BIN}/${SCRIPT} ]; then
+        echo "Failed to create ${TARGET_BIN}/${SCRIPT}"
+        exit 1
+fi
+
+# Commands to create
+COMMANDS="ansible-runner"
+
+# determime target root directory
+# either /usr/local/bin or current user ~/bin
+if [ -d /host/usr/local/bin ]; then
+        TARGET_ROOT=/host/usr/local
+        IMAGE_CONF_DIR=etc/default
+        IMAGE_CONF_FILE=ansible-runner
+elif [ -d /host/bin ] ; then
+        TARGET_ROOT=/host
+        IMAGE_CONF_DIR=.config/ansible-runner
+        IMAGE_CONF_FILE=image
+else
+        echo "could not determine copy target"
+        exit 1
+fi
+
+TARGET_BIN=${TARGET_ROOT}/bin
+TARGET_SHARE=${TARGET_ROOT}/share/ansible-runner
+TARGET_CONF_DIR=${TARGET_ROOT}/${IMAGE_CONF_DIR}
+
+cp -v /container/ansible-wrapper.sh ${TARGET_BIN}/ansible-wrapper.sh
+
+for COMMAND in ${COMMANDS}; do
+    create_command_bin ${COMMAND}
+done
+
+# Create container share area under /usr/local/share if it doesn't exist
+if [ ! -d ${TARGET_SHARE} ]; then
+        mkdir -p ${TARGET_SHARE}
+fi
+
+
+# Save container image used to install the container to appropriate conf
+# file
+if [ ! -d ${TARGET_CONF_DIR} ]; then
+        mkdir -p ${TARGET_CONF_DIR}
+fi
+echo "IMAGE=${IMAGE}" > ${TARGET_CONF_DIR}/${IMAGE_CONF_FILE}
