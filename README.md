@@ -86,7 +86,7 @@ To **encrypt sensitive data**, you can use **Ansible Vault** within the containe
 
 ### **Encrypt sensitive data**
 ```sh
-ansible-vault create secrets.yml
+ansible-vault create ansible-runner/project/secrets.yml
 ```
 Add secrets:
 ```yaml
@@ -99,15 +99,13 @@ Store vault password in `ansible-runner/env/passwords`:
 ```sh
 echo "myvaultpassword" > ansible-runner/env/passwords
 ```
-Define password file in **env/settings**:
-```json
-{
-    "vault_password_file": "/runner/env/passwords"
-}
+Define the Vault Password File in cmdline:
+```sh
+echo "--vault-password-file /work/ansible-runner/env/passwords" > /work/ansible-runner/env/cmdline
 ```
 Run playbooks without manual password entry:
 ```sh
-ansible-runner run ansible-runner -p playbook.yml
+ansible-runner run ansible-runner -p vault_test_playbook.yml
 ```
 
 ---
