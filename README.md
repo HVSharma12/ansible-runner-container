@@ -115,6 +115,29 @@ Run playbooks without manual password entry:
 ```sh
 ansible-runner run ansible-runner -p vault_test_playbook.yml
 ```
+---
+
+---
+### Sync Ansible projects from GitHub to the project
+
+Run the below playbook to sync projects from github
+```sh
+ansible-runner run ansible-runner --project-dir ansible-runner/runner_manager -p sync_github_projects.yml
+```
+The list of projects and their GitHub repositories is managed in:
+
+```yaml
+cat ansible-runner/runner_manager/roles/github_sync/vars/project_config.yml 
+---
+projects:
+  test-playbooks:
+    git_url: "https://github.com/ansible/test-playbooks.git"
+    sync: true
+  system-roles:
+    git_url: "https://github.com/linux-system-roles/cockpit.git"
+    sync: false  # Will NOT sync
+
+```
 
 ---
 ### Uninstalling Ansible Runner
