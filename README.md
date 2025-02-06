@@ -86,6 +86,12 @@ ls -l ansible-runner/artifacts/
 cat ansible-runner/artifacts/<job_id>/stdout
 ```
 ---
+### Outputting json (raw event data) to the console instead of normal output
+
+Add -j argument on the command line:
+```sh
+ansible-runner run ansible-runner -j -p playbook.yml
+```
 
 ---
 ## Storing and Using Ansible Vault for Secrets
