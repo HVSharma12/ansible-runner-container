@@ -77,6 +77,13 @@ To inspect the logs:
 ls -l ansible-runner/artifacts/
 cat ansible-runner/artifacts/<job_id>/stdout
 ```
+---
+
+---
+## Storing and Using Ansible Vault for Secrets
+
+To **encrypt sensitive data**, you can use **Ansible Vault** within the containerized Ansible Runner.
+
 
 ---
 ### Uninstalling Ansible Runner
@@ -90,13 +97,34 @@ podman container runlabel uninstall ansible-runner
 
 ```
 ansible-runner/
-├── env/               # (Optional) Environment variables
-├── inventory/
-│   ├── hosts         # Inventory file (edit this)
-├── project/
-│   ├── playbook.yml  # Sample Ansible playbook
-├── artifacts/        # Stores logs & execution artifacts
+├── env/               # (Optional) Environment variables and settings
+│   ├── envvars        # Environment variables in JSON/YAML format
+│   ├── extravars      # Extra variables passed to playbook execution
+│   ├── passwords      # Securely stored passwords for SSH/Vault
+│   ├── cmdline        # Command-line arguments for Ansible execution
+│   ├── ssh_key        # SSH private key for remote authentication
+│   ├── settings       # Runner-specific settings like timeouts
+├── inventory/         # Hosts file for Ansible inventory
+│   ├── hosts          # Define target systems for playbook execution
+├── project/           # Contains playbooks and related Ansible content
+│   ├── playbook.yml   # Sample Ansible playbook
+│   ├── roles/         # Optional Ansible roles directory
+│   ├── modules/       # Optional modules if custom Ansible modules are needed
+├── artifacts/         # Stores execution logs and results
+│   ├── <job_id>/      # Each playbook run generates a new folder
+│   │   ├── rc         # Return code of execution
+│   │   ├── status     # Execution status (success, failure, timeout)
+│   │   ├── stdout     # Standard output logs from execution
+│   │   ├── fact_cache/ # JSON-based fact cache for host facts
+│   │   ├── job_events/ # Structured event logs for each task
+│   │   ├── profiling_data/ # Resource profiling (CPU, Memory, PIDs)
+├── profiling_data/    # If enabled, stores execution profiling data
+│   ├── <job_id>-cpu.json    # CPU profiling per task
+│   ├── <job_id>-memory.json # Memory profiling per task
+│   ├── <job_id>-pids.json   # Process count profiling per task
 ```
 
 ---
-- add support for non-root
+To-Do
+- add support for non-root container
+- add more examples
