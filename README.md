@@ -84,6 +84,31 @@ cat ansible-runner/artifacts/<job_id>/stdout
 
 To **encrypt sensitive data**, you can use **Ansible Vault** within the containerized Ansible Runner.
 
+### **Encrypt sensitive data**
+```sh
+ansible-vault create secrets.yml
+```
+Add secrets:
+```yaml
+db_password: "SuperSecretPassword"
+api_token: "123456abcdef"
+```
+
+### **Using Vault in `env/` Directory**
+Store vault password in `ansible-runner/env/passwords`:
+```sh
+echo "myvaultpassword" > ansible-runner/env/passwords
+```
+Define password file in **env/settings**:
+```json
+{
+    "vault_password_file": "/runner/env/passwords"
+}
+```
+Run playbooks without manual password entry:
+```sh
+ansible-runner run ansible-runner -p playbook.yml
+```
 
 ---
 ### Uninstalling Ansible Runner
