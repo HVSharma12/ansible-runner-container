@@ -14,7 +14,10 @@ if [ ! -e ${TARGET_BIN}/${SCRIPT} ]; then
 fi
 
 # Commands to create
-COMMANDS="ansible-runner"
+COMMANDS="ansible \
+ansible-playbook \
+ansible-vault \
+ansible-runner"
 
 # determime target root directory
 # either /usr/local/bin or current user ~/bin
