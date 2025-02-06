@@ -76,6 +76,12 @@ cat ansible-runner/artifacts/<job_id>/stdout
 ```
 
 ---
+### Uninstalling Ansible Runner
+
+```sh
+podman container runlabel uninstall ansible-runner
+```
+---
 
 ## Directory Structure
 
