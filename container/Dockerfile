@@ -1,7 +1,6 @@
 #!BuildTag: ansible-runner:latest
 
-# FROM opensuse/tumbleweed:latest
-FROM opensuse/leap:latest
+FROM opensuse/tumbleweed:latest
 
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
@@ -25,7 +24,6 @@ RUN zypper -v -n in \
     ansible \
     ansible-core \
     ansible-runner \
-    python3-setuptools \
     git-core \
     openssh-clients \
     python3-libvirt-python \
