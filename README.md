@@ -50,6 +50,13 @@ Example **inventory/hosts** file:
 server1 ansible_host=192.168.1.10 ansible_user=root
 server2 ansible_host=192.168.1.20 ansible_user=root
 ```
+### Setting Up Passwordless SSH
+```bash
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@xx.xxx.xxx.xx
+
+```
 
 ---
 
