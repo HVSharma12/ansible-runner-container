@@ -8,7 +8,7 @@ This repository provides a simple **Ansible Runner** setup that runs a playbook 
 - A new container is created for each playbook run.
 - Execution logs and artifacts are stored on the VM, not inside the container.
 - Based on [ansible-container](https://github.com/SUSE/ansible-container/)
-- Image used opensuse/leap:latest, Tested on SLE15-SP5
+- Image used opensuse/tumbleweed:latest, Tested on SLE15-SP5
 
 ## Ansible runner commands
 
@@ -21,7 +21,8 @@ The ansible-runner commands are provided as symlinks to ansible-wrapper.sh. The 
 Before running Ansible Runner, pull the container image:
 
 ```sh
-podman pull registry.opensuse.org/home/hsharma/15.6/ansible-runner:latest
+cd container
+podman build -t ansible-runner .
 ```
 
 ---
