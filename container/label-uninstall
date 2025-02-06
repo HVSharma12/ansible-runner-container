@@ -11,6 +11,9 @@ fi
 }
 
 COMMANDS="ansible-wrapper.sh \
+ansible \
+ansible-playbook \
+ansible-vault \
 ansible-runner"
 
 for COMMAND in ${COMMANDS}; do
