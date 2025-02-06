@@ -14,7 +14,7 @@ The ansible-runner commands are provided as symlinks to ansible-wrapper.sh. The 
 
 ## Getting Started
 
-### Pull the Ansible Runner Container Image**
+### Pull the Ansible Runner Container Image
 
 Before running Ansible Runner, pull the container image:
 
@@ -24,7 +24,7 @@ podman pull registry.opensuse.org/home/hsharma/15.6/ansible-runner:latest
 
 ---
 
-### Install Ansible Runner (Root User)**
+### Install Ansible Runner (Root User)
 
 To install **Ansible Runner as root**, run:
 
@@ -36,7 +36,7 @@ This places the `ansible-runner` command inside `/usr/local/bin`, making it avai
 
 ---
 
-### Add Hosts to the Inventory File**
+### Add Hosts to the Inventory File
 
 Before running a playbook, you need to define your inventory in the **`ansible-runner/inventory/hosts`** file.
 
@@ -50,7 +50,7 @@ server2 ansible_host=192.168.1.20 ansible_user=root
 
 ---
 
-### Run the Sample Playbook**
+### Run the Sample Playbook
 
 Once the inventory file is updated, you can run the **sample playbook** using:
 
@@ -60,7 +60,7 @@ ansible-runner run ansible-runner -p playbook.yml
 
 ---
 
-### Check Execution Logs**
+### Check Execution Logs
 
 After execution, logs and artifacts will be stored in:
 
@@ -77,7 +77,7 @@ cat ansible-runner/artifacts/<job_id>/stdout
 
 ---
 
-## Directory Structure**
+## Directory Structure
 
 ```
 ansible-runner/
