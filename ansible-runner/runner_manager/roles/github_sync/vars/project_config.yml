@@ -1,0 +1,9 @@
+---
+projects:
+  test-playbooks:
+    git_url: "https://github.com/ansible/test-playbooks.git"
+    sync: true
+  system-roles:
+    git_url: "https://github.com/linux-system-roles/cockpit.git"
+    sync: false  # Will NOT sync
+

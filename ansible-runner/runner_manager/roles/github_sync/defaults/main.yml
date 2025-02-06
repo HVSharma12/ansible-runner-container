@@ -1,0 +1,4 @@
+---
+sync_enabled: true
+projects_base_path: "/work/ansible-runner/project/"
+

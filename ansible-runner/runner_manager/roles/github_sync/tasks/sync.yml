@@ -1,0 +1,8 @@
+---
+- name: Sync enabled projects
+  when: item.value.sync | default(false)
+  loop: "{{ projects | dict2items }}"
+  loop_control:
+    label: "{{ item.key }}"
+  include_tasks: clone_update.yml
+

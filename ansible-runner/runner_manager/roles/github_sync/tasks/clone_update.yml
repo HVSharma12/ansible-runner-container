@@ -1,0 +1,13 @@
+---
+- name: Ensure project directory exists
+  file:
+    path: "{{ projects_base_path }}/{{ item.key }}"
+    state: directory
+
+- name: Clone or update Git repository
+  git:
+    repo: "{{ item.value.git_url }}"
+    dest: "{{ projects_base_path }}/{{ item.key }}"
+    version: main
+    update: yes
+

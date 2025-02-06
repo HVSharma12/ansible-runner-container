@@ -1,0 +1,8 @@
+---
+- name: Load project configurations
+  include_vars: vars/project_config.yml
+
+- name: Run project sync tasks
+  include_tasks: sync.yml
+  when: sync_enabled
+
