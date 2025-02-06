@@ -16,7 +16,7 @@ The ansible-runner commands are provided as symlinks to ansible-wrapper.sh. The 
 
 ## Getting Started
 
-### Pull the Ansible Runner Container Image
+### Build the Ansible Runner Container Image
 
 Before running Ansible Runner, pull the container image:
 
