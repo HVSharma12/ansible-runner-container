@@ -5,7 +5,7 @@ This repository provides a simple **Ansible Runner** setup that runs a playbook 
 - No need to install Ansible or Ansible-runner directly on the VM.
 - All Ansible tasks execute via SSH to the VM hosting the container or other remote systems.
 - All SSH connections go through the VM running the container, not directly inside the container.
-- A new container is created for each playbook run.
+- Each playbook execution spawns a new ephemeral Podman container.
 - Execution logs and artifacts are stored on the VM, not inside the container.
 - Based on [ansible-container](https://github.com/SUSE/ansible-container/)
 - Image used opensuse/tumbleweed:latest, Tested on SLE15-SP5
