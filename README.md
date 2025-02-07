@@ -3,7 +3,6 @@
 This repository provides a simple **Ansible Runner** setup that runs a playbook inside a **containerized Ansible Runner environment**.
 
 - No need to install Ansible or Ansible-runner directly on the VM.
-- All Ansible tasks execute via SSH to the VM hosting the container or other remote systems.
 - All SSH connections go through the VM running the container, not directly inside the container.
 - Each playbook execution spawns a new ephemeral Podman container.
 - Supports parallel execution, allowing multiple containers to run side by side.
