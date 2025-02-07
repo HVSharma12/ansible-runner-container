@@ -8,7 +8,7 @@ This repository provides a simple **Ansible Runner** setup that runs a playbook 
 - Each playbook execution spawns a new ephemeral Podman container.
 - Supports parallel execution, allowing multiple containers to run side by side.
 - Execution logs and artifacts are stored on the VM, not inside the container.
-- Based on [ansible-container](https://github.com/SUSE/ansible-container/)
+- Based on [ansible-container](https://github.com/ansible-container/)
 - Image used opensuse/tumbleweed:latest, Tested on SLE15-SP5
 
 ## Ansible runner commands
