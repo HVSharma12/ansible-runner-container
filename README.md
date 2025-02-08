@@ -92,12 +92,13 @@ Add -j argument on the command line:
 ```sh
 ansible-runner run ansible-runner -j -p playbook.yml
 ```
+
 ---
 ### Artifact Integration with Elasticsearch & Similar Tools
 One of the benefits of using Ansible Runner is that artifacts (logs, execution data, and playbook outputs) are stored in structured directories.
 These artifacts can be easily indexed by Elasticsearch, Logstash, or other tools for analysis and visualization.
 
-
+![Elasticsearch Integration](https://github.com/HVSharma12/ansible-runner-container/blob/main/Screenshot_20250207_060322.png)
 
 ---
 ## Storing and Using Ansible Vault for Secrets
