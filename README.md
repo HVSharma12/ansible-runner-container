@@ -28,6 +28,7 @@ podman build -t ansible-runner .
 ---
 
 ### Install Ansible Runner (Root User)
+note: the container be installed as as non-root user-todo.
 
 To install **Ansible Runner as root**, run:
 
@@ -91,6 +92,12 @@ Add -j argument on the command line:
 ```sh
 ansible-runner run ansible-runner -j -p playbook.yml
 ```
+---
+### Artifact Integration with Elasticsearch & Similar Tools
+One of the benefits of using Ansible Runner is that artifacts (logs, execution data, and playbook outputs) are stored in structured directories.
+These artifacts can be easily indexed by Elasticsearch, Logstash, or other tools for analysis and visualization.
+
+
 
 ---
 ## Storing and Using Ansible Vault for Secrets
