@@ -162,6 +162,20 @@ projects:
 podman container runlabel uninstall ansible-runner
 ```
 ---
+## Setting up Ansible Runner Service
+
+Users can also set up an ansible-runner-service to enable the following capabilities:
+
+  - Execution of playbooks via a REST API instead of CLI.
+  - Integration with ITSM tools for workflows.
+  - Running multiple playbooks programmatically with API-driven management.
+  - Inventory management through API endpoints.
+  - Secure execution using HTTPS and mutual TLS authentication.
+  - Querying playbook execution state and logs through API endpoints.
+
+For setup and installation, refer to the GitHub repository: [ansible-runner-service](https://github.com/HVSharma12/ansible-runner-service)
+
+---
 
 ## Directory Structure
 
