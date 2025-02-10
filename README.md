@@ -211,7 +211,3 @@ ansible-runner/
 ```
 Refer -https://ansible.readthedocs.io/projects/runner/en/stable/intro/
 
----
-To-Do
-- add support for non-root container
-- add more examples
