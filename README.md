@@ -155,7 +155,6 @@ Users can also set up an ansible-runner-service to enable the following capabili
   - Querying playbook execution state and logs through API endpoints.
 
 For setup and installation, refer to the GitHub repository: [ansible-runner-service](https://github.com/HVSharma12/ansible-runner-service)
----
 
 ---
 ### Sync Ansible projects from GitHub to the project
