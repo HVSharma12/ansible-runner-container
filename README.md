@@ -135,6 +135,27 @@ ansible-runner run ansible-runner -p vault_test_playbook.yml
 ---
 
 ---
+### Uninstalling Ansible Runner
+
+```sh
+podman container runlabel uninstall ansible-runner
+```
+---
+## Setting up Ansible Runner Service
+
+Users can also set up an ansible-runner-service to enable the following capabilities:
+
+  - Execution of playbooks via a REST API instead of CLI.
+  - Integration with ITSM tools for workflows.
+  - Running multiple playbooks programmatically with API-driven management.
+  - Inventory management through API endpoints.
+  - Secure execution using HTTPS and mutual TLS authentication.
+  - Querying playbook execution state and logs through API endpoints.
+
+For setup and installation, refer to the GitHub repository: [ansible-runner-service](https://github.com/HVSharma12/ansible-runner-service)
+---
+
+---
 ### Sync Ansible projects from GitHub to the project
 
 Run the below playbook to sync projects from github
@@ -155,27 +176,6 @@ projects:
     sync: false  # Will NOT sync
 
 ```
-
----
-### Uninstalling Ansible Runner
-
-```sh
-podman container runlabel uninstall ansible-runner
-```
----
-## Setting up Ansible Runner Service
-
-Users can also set up an ansible-runner-service to enable the following capabilities:
-
-  - Execution of playbooks via a REST API instead of CLI.
-  - Integration with ITSM tools for workflows.
-  - Running multiple playbooks programmatically with API-driven management.
-  - Inventory management through API endpoints.
-  - Secure execution using HTTPS and mutual TLS authentication.
-  - Querying playbook execution state and logs through API endpoints.
-
-For setup and installation, refer to the GitHub repository: [ansible-runner-service](https://github.com/HVSharma12/ansible-runner-service)
-
 ---
 
 ## Directory Structure
