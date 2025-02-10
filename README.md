@@ -43,7 +43,8 @@ This places the `ansible-runner` command inside `/usr/local/bin`, making it avai
 
 ### Add Hosts to the Inventory File
 
-Before running a playbook, you need to define your inventory in the **`ansible-runner/inventory/hosts`** file.
+Before running a playbook, you need to define your inventory in the **`ansible-runner/inventory/hosts`** file. The Ansible Runner organizes its directory structure in a standardized way,
+referencing inventory/hosts, env/ssh_key for target system definitions. This file acts as the primary source for host configurations when executing playbooks within the runner environment.
 
 Example **inventory/hosts** file:
 
@@ -59,6 +60,7 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
 ssh-copy-id -i ~/.ssh/id_rsa.pub root@xx.xxx.xxx.xx
 
 ```
+or you can set the keys in env/ssh_key Runner detects when a private key is provided and will wrap the call to Ansible in ssh-agent.
 
 ---
 
