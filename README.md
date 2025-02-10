@@ -123,6 +123,9 @@ echo "myvaultpassword" > ansible-runner/env/passwords
 Define the Vault Password File in cmdline:
 ```sh
 echo "--vault-password-file /work/ansible-runner/env/passwords" > ansible-runner/env/cmdline
+
+or pass option -k
+
 ```
 Run playbooks without manual password entry:
 ```sh
