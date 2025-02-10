@@ -29,7 +29,7 @@ podman build -t ansible-runner .
 ---
 
 ### Install Ansible Runner (Root User)
-note: the container be installed as as non-root user-todo.
+note: the container can also be installed as as non-root
 
 To install **Ansible Runner as root**, run:
 
