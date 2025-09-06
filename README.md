@@ -1,6 +1,6 @@
 # ansible-runner-container
 
-This repository provides a simple **Ansible Runner** setup that runs a playbook inside a **containerized Ansible Runner environment**.
+This repository provides a simple **Ansible Runner** setup that runs a playbook inside a **containerized Ansible Runner environment** for testing Ansible runner.
 
 - No need to install Ansible or Ansible-runner directly on the VM.
 - All SSH connections go through the VM running the container, not directly inside the container.
